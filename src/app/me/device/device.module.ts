@@ -12,15 +12,17 @@ import { DeleteConfirmDialogComponent } from 'src/app/shared/delete-confirm-dial
 import { AddchecklistDialogComponent } from './checklist/addchecklist-dialog/addchecklist-dialog.component';
 import { DataFieldComponent } from './devices/data-field/data-field.component';
 import { DatafieldCardviewComponent } from './devices/data-field/datafield-cardview/datafield-cardview.component';
+import { DatafieldGridviewComponent } from './devices/data-field/datafield-gridview/datafield-gridview.component';
 
 export const routes = [
   { path: '', component:DevicesComponent, pathMatch: 'full' },
   // {path:'datafield',redirectTo:'cardview', data:{breadcrumb:"Data Field"}},
-  {path:'cardview',component:DatafieldCardviewComponent,data:{breadcrumb:"Data Field"}}
+  {path:'cardview',component:DatafieldCardviewComponent,data:{breadcrumb:"Data Field"}},
+  {path:'gridview',component:DatafieldGridviewComponent,data:{breadcrumb:"Data Field"}}
 ];
 
 @NgModule({
-  declarations: [  DevicesComponent,  ScheduleorderDialogComponent, AddDeviceComponent, DataFieldComponent, DatafieldCardviewComponent],
+  declarations: [  DevicesComponent,  ScheduleorderDialogComponent, AddDeviceComponent, DataFieldComponent, DatafieldCardviewComponent, DatafieldGridviewComponent],
   imports: [
     CommonModule,RouterModule.forChild(routes),
     SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,

@@ -49,11 +49,11 @@ export class ProjectGridviewComponent implements OnInit {
   public popoverStatusMessage: string = 'Are you sure you want to change status?';
   public cancelClicked: boolean = false;
   totalProjects = [
-    {projectNumber: "P12007",project_address: "2314535 Ontario Limited (The King Street Condos)",clientName: "Amazon",city:"Ontario",country:"Canada",zipcode:"2345",setupDate:"01-07-2020",remarks:"None",status: "Active"},
-    {projectNumber: "P12009",project_address: "2314535 Ontario Limited (The King Street Condos)",clientName: "Flipkart",city:"Ontario",country:"Vietnam",zipcode:"2345",setupDate:"01-07-2020",remarks:"None",status: "Active"},
-    {projectNumber: "P12011",project_address: "2314535 Ontario Limited (The King Street Condos)",clientName: "E-Square",city:"Ontario",country:"India",zipcode:"2345",setupDate:"01-07-2020",remarks:"None",status: "Inactive"},
-    {projectNumber: "P12012",project_address: "2314535 Ontario Limited (The King Street Condos)",clientName: "StoneField",city:"Ontario",country:"Taiwan",zipcode:"2345",setupDate:"01-07-2020",remarks:"None",status: "Active"},
-    {projectNumber: "P12015",project_address: "2314535 Ontario Limited (The King Street Condos)",clientName: "Bluedart",city:"Ontario",country:"Vietnam",zipcode:"2345",setupDate:"01-07-2020",remarks:"None",status: "Active"},
+    {projectNumber: "P12007",topicno:"1234",project_address: "2314535 Ontario Limited (The King Street Condos)",clientName: "Amazon",city:"Ontario",country:"Canada",zipcode:"2345",setupDate:"01-07-2020",remarks:"None",status: "Active"},
+    {projectNumber: "P12009",topicno:"1232",project_address: "2314535 Ontario Limited (The King Street Condos)",clientName: "Flipkart",city:"Ontario",country:"Vietnam",zipcode:"2345",setupDate:"01-07-2020",remarks:"None",status: "Active"},
+    {projectNumber: "P12011",topicno:"1247",project_address: "2314535 Ontario Limited (The King Street Condos)",clientName: "E-Square",city:"Ontario",country:"India",zipcode:"2345",setupDate:"01-07-2020",remarks:"None",status: "Inactive"},
+    {projectNumber: "P12012",topicno:"1297",project_address: "2314535 Ontario Limited (The King Street Condos)",clientName: "StoneField",city:"Ontario",country:"Taiwan",zipcode:"2345",setupDate:"01-07-2020",remarks:"None",status: "Active"},
+    {projectNumber: "P12015",topicno:"1202",project_address: "2314535 Ontario Limited (The King Street Condos)",clientName: "Bluedart",city:"Ontario",country:"Vietnam",zipcode:"2345",setupDate:"01-07-2020",remarks:"None",status: "Active"},
     // {projectNumber: "P12007",project_address: "2314535 Ontario Limited (The King Street Condos)",clientName: "AJAX",city:"Ontario",country:"Canada",zipcode:"2345",setupDate:"01-07-2020",remarks:"None",status: "Active"},
     // {projectNumber: "P12007",project_address: "2314535 Ontario Limited (The King Street Condos)",clientName: "AJAX",city:"Ontario",country:"Canada",zipcode:"2345",setupDate:"01-07-2020",remarks:"None",status: "Inactive"},
     // {projectNumber: "P12007",project_address: "2314535 Ontario Limited (The King Street Condos)",clientName: "AJAX",city:"Ontario",country:"Canada",zipcode:"2345",setupDate:"01-07-2020",remarks:"None",status: "Active"},

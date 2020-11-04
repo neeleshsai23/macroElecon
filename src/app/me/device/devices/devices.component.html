@@ -51,6 +51,7 @@
           <thead class="tbl-head">
             <tr class="tr-grid-header">
               <th>Device ID</th>
+              <th>Serial No</th>
               <th>Device Type</th>
               <th>Make</th>
               <th>Model</th>
@@ -72,6 +73,9 @@
             <tr *ngFor="let campaign of audit">
               <td class="inner-screen">
                 {{campaign.id}}
+              </td>
+              <td>
+                {{campaign.serialno}}
               </td>
               <td>
                 {{campaign.type}}

@@ -200,7 +200,8 @@
             <table matSort id="example2" class="table table-bordered table-hover">
                 <thead class="tbl-head">
                     <tr>
-                        <th>Project #</th>
+                        <th>Project Code</th>
+                        <th>Topic No</th>
                         <th>Client Name</th>
                         <th>Project Address</th>
                         <th>City</th>
@@ -227,6 +228,9 @@
                         routerLink="/mpki/projects/project-dashboard/stagegateprocess">
                         {{item.ele}}
                     </a></td> -->
+                    <td>
+                        {{item.topicno}}
+                    </td>
                     <td>
                         {{item.clientName}}
                         
