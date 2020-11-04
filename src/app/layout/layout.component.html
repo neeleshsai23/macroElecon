@@ -43,7 +43,7 @@
                 </div>
             </div>
         </mat-toolbar>
-        <div id="main-content" class="inner-sidenav-content transition-2" [ngStyle]="{'background-color':url=='/me/dashboard'?'rgb(12, 18, 42)':'#fff'}" perfectScrollbar
+        <div id="main-content" class="inner-sidenav-content transition-2" [ngStyle]="url=='/simc/dashboard'?{'background-color':'rgb(12, 18, 42)'}:url=='/me/dashboard'?{'background-color':'rgb(12, 18, 42)'}:{'background-color':'#fff'}" perfectScrollbar
             [disabled]="!settings.fixedHeader">
             <app-breadcrumb></app-breadcrumb>
             <router-outlet></router-outlet>

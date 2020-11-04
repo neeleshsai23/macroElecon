@@ -50,6 +50,7 @@ export class LayoutComponent implements OnInit {
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
         this.url=e.url.toString();
+        console.log('layout',this.url)
       }
     });
   }
@@ -57,6 +58,10 @@ export class LayoutComponent implements OnInit {
   ngOnInit() {
    
     if (localStorage.getItem("loginUser") == "admin@simc.com") {
+      this.show_universal_filter = true;
+      this.Show_analytics = true;
+    }
+    if (localStorage.getItem("loginUser") == "customer@simc.com") {
       this.show_universal_filter = true;
       this.Show_analytics = true;
     }

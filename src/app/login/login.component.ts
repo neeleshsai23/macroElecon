@@ -25,10 +25,10 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('userType','admin');
       this.route.navigate(['/me/dashboard']);
     }
-    if(values["username"]=="customer@simc.com" && values["password"]=="customer"){
+    else if(values["username"]=="customer@simc.com" && values["password"]=="customer"){
       localStorage.setItem("loginUser", values["username"]);
       localStorage.setItem('userType','customer');
-      this.route.navigate(['/me/dashboard']);
+      this.route.navigate(['/simc/dashboard']);
     }
     else{
       alert('Invalid Credentials');

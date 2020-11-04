@@ -1,8 +1,18 @@
 <div fxLayout="column">
     <div class="flex-p">
-        <div class="w-100" style="margin:30px 0">
-            <div style="display: flex;align-items: center;justify-content: flex-end;">
-                <label style="margin-top:7px;margin-right:10px;text-align:right;color:rgb(180, 180, 180);font-size: 18px;">Select Client :</label>
+        <div class="w-100" style="margin:30px 0" fxLayoutAlign="flex-end center">
+            <div fxLayout="center center" style="margin-right:20px;">
+                <label style="margin-top:4px;margin-right:10px;text-align:right;color:rgb(180, 180, 180);font-size: 18px;">Select Client :</label>
+                <div style="width: 250px;border-radius:10px">
+                    <mat-select style="background: rgb(64, 73, 104);border: none;"  class="form-control"
+                      required>
+                      <mat-option *ngFor="let conuntry of countries" [value]="conuntry.conuntry_id">{{conuntry.client_name}}
+                      </mat-option>
+                    </mat-select>
+                  </div>
+            </div>
+            <div fxLayout="center center">
+                <label style="margin-top:4px;margin-right:10px;text-align:right;color:rgb(180, 180, 180);font-size: 18px;">Select Project :</label>
                 <div style="width: 250px;border-radius:10px">
                     <mat-select style="background: rgb(64, 73, 104);border: none;"  class="form-control"
                       required>

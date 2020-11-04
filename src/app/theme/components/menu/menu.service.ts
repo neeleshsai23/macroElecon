@@ -30,16 +30,16 @@ export class MenuService {
         );
       } else if (this.userType == 'customer') {
         temp.push(
-          new Menu (1, 'Dashboard', '/me/dashboard', null, 'dashboard', null, false, 0,"white",true),
+          new Menu (1, 'Dashboard', '/simc/dashboard', null, 'dashboard', null, false, 0,"white",true),
           // new Menu (2, 'Analytics', '/me/analytics', null, 'analytics', null, false, 0,"white"), 
-          new Menu (3, 'Clients', '/me/clients', null, 'groups', null, false, 0,"white",true), 
-          new Menu (4, 'Projects', '/me/projects', null, 'business_center', null, false, 0,"white",true), 
-          new Menu (5, 'Devices', '/me/devices', null, 'dns', null, false, 0,"white",true), 
-          new Menu (6, 'Admin', '/me/admin', null, 'admin_panel_settings', null, true, 0,"white",true),   
-          new Menu (7, 'Master Data', '/me/admin/masterdata', null, 'reorder', null, false, 6,"white",true),  
-          new Menu (8, 'Users', '/me/admin/users', null, 'people', null, false, 6,"white",true), 
-          new Menu (9, 'Settings', '/me/admin/settings', null, 'settings', null, false, 6,"white",true), 
-          new Menu (10, 'Lookup Options', '/me/admin/lookup', null, 'search', null, false, 6,"white",true),
+          // new Menu (3, 'Clients', '/clients', null, 'groups', null, false, 0,"white",true), 
+          new Menu (4, 'Projects', '/simc/projects', null, 'business_center', null, false, 0,"white",true), 
+          new Menu (5, 'Devices', '/simc/devices', null, 'dns', null, false, 0,"white",true), 
+          new Menu (6, 'User', '/simc/user', null, 'admin_panel_settings', null, true, 0,"white",true),   
+          // new Menu (7, 'Master Data', '/me/admin/masterdata', null, 'reorder', null, false, 6,"white",true),  
+          new Menu (8, 'Users', '/simc/user/users', null, 'people', null, false, 6,"white",true), 
+          new Menu (9, 'Settings', '/simc/user/settings', null, 'settings', null, false, 6,"white",true), 
+          // new Menu (10, 'Lookup Options', '/me/admin/lookup', null, 'search', null, false, 6,"white",true),
           );
         }
         

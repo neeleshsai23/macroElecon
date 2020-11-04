@@ -35,8 +35,8 @@ export class HorizontalMenuComponent implements OnInit {
 
   ngOnInit() {
     this.currentYear = "" + new Date().getFullYear();
-    if (localStorage.getItem("loginUser") == "admin@simc.com") {
-      this.menuItems = this.menuService.getAdminMenuItems();
+    if (localStorage.getItem("loginUser") == "admin@simc.com" || "customer@simc.com") {
+      this.menuItems = this.menuService.getHorizontalMenuItems();
     }
     this.menuItems = this.menuItems.filter(
       (item) => item.parentId == this.menuParentId

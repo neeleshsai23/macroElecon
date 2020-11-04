@@ -1,23 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { TreeNode } from 'primeng/components/common/api';
-import { MatDialog } from '@angular/material';
 import { TreeService } from '../tree.service';
-import { AddFactoryComponent } from './add-factory/add-factory.component';
-import { AddFactoryModuleComponent } from './add-factory-module/add-factory-module.component';
-import { AddFactoryModuleTaskComponent } from './add-factory-module-task/add-factory-module-task.component';
+import { TreeNode } from 'primeng/components/common/api';
+
 
 @Component({
-  selector: 'app-sitevisits',
-  templateUrl: './sitevisits.component.html',
-  styleUrls: ['./sitevisits.component.scss']
+  selector: 'app-client-modulesanddevices',
+  templateUrl: './client-modulesanddevices.component.html',
+  styleUrls: ['./client-modulesanddevices.component.scss']
 })
-export class SitevisitsComponent implements OnInit {
-
-  localData:any;
-
-  constructor(public treeService : TreeService, public dialog: MatDialog) { 
-    this.localData = this.taskData;
-  }
+export class ClientModulesanddevicesComponent implements OnInit {
 
   values:any = [
     {head:"31-10-2020 16:49:50",amperes:'32',voltage:'24',KW:'21',KVA:'23',power:'1',KWh:'2'},
@@ -26,6 +17,12 @@ export class SitevisitsComponent implements OnInit {
     {head:"31-10-2020 16:49:50",amperes:'32',voltage:'24',KW:'21',KVA:'23',power:'1',KWh:'2'},
     {head:"31-10-2020 16:49:50",amperes:'32',voltage:'24',KW:'21',KVA:'23',power:'1',KWh:'2'},
   ]
+
+  localData:any;
+
+  constructor(public treeService : TreeService) { 
+    this.localData = this.taskData;
+  }
 
   isInception: boolean = true;
   isControl: boolean = false;
@@ -153,50 +150,11 @@ export class SitevisitsComponent implements OnInit {
 //   this.taskData.forEach(x=>x.selected = false);
 // }
 
-openEntityDialog(stat){
-  let dialogRef = this.dialog.open(AddFactoryComponent, {
-    data: stat,
-    height: 'auto',
-    width: '600px',
-    autoFocus: false,
-  });
-  
-  dialogRef.afterClosed().subscribe(prospects => {
-    if(prospects == 'save') {
-      
-    }
-  });
-}
 
-openModuleDialog(stat){
-  let dialogRef = this.dialog.open(AddFactoryModuleComponent, {
-    data: stat,
-    height: 'auto',
-    width: '600px',
-    autoFocus: false,
-  });
-  
-  dialogRef.afterClosed().subscribe(prospects => {
-    if(prospects == 'save') {
-      
-    }
-  });
-}
 
-openTaskDialog(stat){
-  let dialogRef = this.dialog.open(AddFactoryModuleTaskComponent, {
-    data: stat,
-    height: 'auto',
-    width: '600px',
-    autoFocus: false,
-  });
-  
-  dialogRef.afterClosed().subscribe(prospects => {
-    if(prospects == 'save') {
-      
-    }
-  });
-}
+
+
+
   
   // scrollActions(side) {
   //   this.taskData.forEach(element => {

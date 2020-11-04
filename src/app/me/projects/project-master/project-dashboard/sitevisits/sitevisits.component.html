@@ -101,10 +101,66 @@ class="mat-raised-button tab"> Production (3)
                                                 </div>
                                                 
                                             </p-header>
+                                            <!--  -->
+                                            
+                                            <!--  -->
+
                                             <div class="table-responsive" id="{{item.id}}">
                                                 
-                                                <mat-card class="col-sm-12" style="background: #DBE8CC !important;margin-bottom: 10px;">
-                                                    <div class="col-sm-12" style="text-align: center;font-weight: bold;margin:10px 0">
+                                                <mat-card class="col-sm-12" style="margin-bottom: 10px;">
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <div id="grid-table-container" class="table-responsive">
+                                                                <table matSort id="example2" class="table table-bordered table-hover">
+                                                                    <thead class="tbl-head">
+                                                                        <tr>
+                                                                            <th class="text-center">Date</th>
+                                                                            <th class="text-center">Current(A)</th>
+                                                                            <th class="text-center">Voltage(V)</th>
+                                                                            <th class="text-center">Rating(KW)</th>
+                                                                            <th class="text-center">Load(KVA)</th>
+                                                                            <th class="text-center">Power Factor</th>
+                                                                            <th class="text-center">Consumption(KWh)</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr *ngFor="let item of values">
+                                                                            <td class="text-center" style="min-width: 70px !important;">
+                                                                              <a>
+                                                                                {{item.head}}
+                                                                            </a>
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            {{item.amperes}}
+                                                                            
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            {{item.voltage}}
+                                                                            
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            {{item.KW}}
+                                                                            
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            {{item.KVA}}
+                                                                            
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            {{item.power}}
+                                                                            
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            {{item.KWh}}
+                                                                            
+                                                                        </td>
+                                                        </tr>
+                                                      </tbody>
+                                                      </table>
+                                                      </div>
+                                                      </div>
+                                                      </div>
+                                                    <!-- <div class="col-sm-12" style="text-align: center;font-weight: bold;margin:10px 0">
                                                         31-10-2020 16:49:50
 
                                                     </div>
@@ -243,7 +299,7 @@ class="mat-raised-button tab"> Production (3)
                                                     <div class="col-sm-4">
                                                         <label>Consumption(KWh):</label>
                                                         <span>&nbsp;&nbsp;{{item.consumption}} </span>
-                                                    </div>
+                                                    </div> -->
                                                     <div class="col-sm-12" style="text-align: center !important;margin-top: 5px;">
                                                         <a mat-raised-button class="btn-primary" target="_blank" routerLink="../../../devices/cardview">
                                                             View More

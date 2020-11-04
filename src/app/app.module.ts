@@ -51,7 +51,6 @@ import {
   AgmJsMarkerClustererModule,
   ClusterManager
 } from "@agm/js-marker-clusterer";
-import { DashboardComponent } from './me/dashboard/dashboard.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   wheelPropagation: true,
@@ -112,7 +111,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ConfirmDialogComponent,
     ProfileDialogComponent,
     AddNoteDialogComponent,
-    UniversalFilterComponent
+    UniversalFilterComponent,
   ],
   entryComponents: [
     VerticalMenuComponent,

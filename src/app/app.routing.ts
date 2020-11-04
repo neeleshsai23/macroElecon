@@ -6,6 +6,9 @@ import { NotFoundComponent } from "./me/not-found/not-found.component";
 import { DashboardComponent } from "./me/dashboard/dashboard.component";
 
 export const routes: Routes = [
+  
+  { path: "", redirectTo: "login", pathMatch: "full" },
+  { path: "login", component: LoginComponent},
   {
     path: "me",
     component: LayoutComponent,
@@ -22,8 +25,23 @@ export const routes: Routes = [
       { path: 'admin', loadChildren: './me/admin/admin.module#AdminModule', data: { breadcrumb: 'Carriers' } },
     ],
   },
-  { path: "", redirectTo: "login", pathMatch: "full" },
-  { path: "login", component: LoginComponent},
+  {
+    path:"simc",component:LayoutComponent,
+    children:[
+      {
+        path:"dashboard",loadChildren:'./me/client/client-dashboard/client-dashboard.module#ClientDashboardModule',data:{breadcrumb:"Dashboard"},
+      },
+      {
+        path:"projects",loadChildren:'./me/client/client-projects/client-projects.module#ClientProjectsModule',data:{breadcrumb:"Projects"}
+      },
+      {
+        path:"devices",loadChildren:'./me/client/client-device/client-device.module#ClientDeviceModule',data:{breadcrumb:"Devices"}
+      },
+      {
+        path:"user",loadChildren:'./me/client/user/user.module#UserModule',data:{breadcrumb:"User"}
+      }
+    ]
+  },
   {
     path: "**",
     component: NotFoundComponent,
@@ -32,6 +50,6 @@ export const routes: Routes = [
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {
-    //  preloadingStrategy: PreloadAllModules,  // <- comment this line for activate lazy load
+    //  preloadingStrategy: PreloadAllModules, 
   // useHash: true
 });
