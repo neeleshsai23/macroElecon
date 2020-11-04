@@ -22,6 +22,12 @@ export class LoginComponent implements OnInit {
   onSubmit(values:Object){
     if(values["username"]=="admin@simc.com" && values["password"]=="admin"){
       localStorage.setItem("loginUser", values["username"]);
+      localStorage.setItem('userType','admin');
+      this.route.navigate(['/me/dashboard']);
+    }
+    if(values["username"]=="customer@simc.com" && values["password"]=="customer"){
+      localStorage.setItem("loginUser", values["username"]);
+      localStorage.setItem('userType','customer');
       this.route.navigate(['/me/dashboard']);
     }
     else{
