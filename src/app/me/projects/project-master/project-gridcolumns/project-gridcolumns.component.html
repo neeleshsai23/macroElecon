@@ -1,0 +1,34 @@
+
+<div class="NewHeader">
+  <h1 mat-dialog-title>Grid View Configuration </h1>
+</div> 
+<p>Please select the required columns in the grid, to view grid with specific columns</p>
+<div mat-dialog-content style="overflow:hidden!important;">
+  <form class="form-horizontal" novalidate [formGroup]="gridColumnForm" style="margin-top:10px">
+    <mat-checkbox  class="col-sm-4" formControlName="campaignName">Project #</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" formControlName="Industry">Client Name</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" formControlName="Segment">Industry</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" formControlName="Country">Stage Design</mat-checkbox>
+    <!-- <mat-checkbox class="col-sm-4" formControlName="BD">BD</mat-checkbox> -->
+    <mat-checkbox  class="col-sm-4" formControlName="CampaignType">Tasks</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" formControlName="Solution">Factory Location</mat-checkbox>
+    <mat-checkbox class="col-sm-4" formControlName="Checklist">Docs</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" formControlName="LeadSample">Logistics</mat-checkbox>
+    <mat-checkbox class="col-sm-4" formControlName="EstimatedLeads">Project Manager</mat-checkbox>
+    <mat-checkbox class="col-sm-4" formControlName="ActualLeads">Factory Manager</mat-checkbox>
+    <mat-checkbox class="col-sm-4" formControlName="ResearchLeads">Start Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4" formControlName="WarmLeads">Plan Finish Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4" formControlName="HotLeads">Expected Finish Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4" formControlName="Meetings">Percentage Completion</mat-checkbox>
+    <!-- <mat-checkbox class="col-sm-4" formControlName="Prospects">Invoiced</mat-checkbox> -->
+    <!-- <mat-checkbox class="col-sm-4" formControlName="LastUpdated">Last Updated</mat-checkbox>
+    <mat-checkbox class="col-sm-4" formControlName="StartDate">Start Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4" formControlName="FinishDate">End Date</mat-checkbox> -->
+  </form>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="saveGridColumns()">Configure</button>
+  <button mat-raised-button class="CancelClass" (click)="close()">Close</button>
+</mat-dialog-actions>
+

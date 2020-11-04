@@ -1,0 +1,262 @@
+
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    <span *ngIf="!project" class="title-left">Add</span>
+    <span *ngIf="project" class="title-left">Update</span> Project
+  </h1>
+</div>
+<mat-horizontal-stepper #stepper>
+    <mat-step>
+        <div mat-dialog-content>
+            <form class="form-horizontal" novalidate [formGroup]="projectForm">
+                <ng-template matStepLabel>Project Details</ng-template>
+              <div class="form-group">
+                <label class="control-label col-sm-4 add-member-label">Project Name:&nbsp;</label>
+                <div class="col-sm-8">
+                  <input type="text" maxlength="50" class="form-control" placeholder="Enter Project Name"
+                    formControlName="contactName" required>
+                  <!-- <div *ngIf="!contactName.valid && (contactName.dirty || contactName.touched)" class="error-text">
+                    <div *ngIf="contactName.errors.required">
+                      Project # is required
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+              <!-- <div class="form-group">
+                  <label class="control-label col-sm-4 add-member-label">Street Address:&nbsp;</label>
+                  <div class="col-sm-8">
+                    <input type="text" maxlength="200" class="form-control" placeholder="Enter Street Address"
+                      formControlName="streetAddress" required>
+                    <div *ngIf="!streetAddress.valid && (streetAddress.dirty || streetAddress.touched)" class="error-text">
+                      <div *ngIf="streetAddress.errors.required">
+                        street Address is required
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                <div class="form-group">
+                  <label class="control-label col-sm-4 add-member-label">Select Client:&nbsp;</label>
+                  <div class="col-sm-8">
+                    <mat-select color="primary" placeholder="-- Select Client --" formControlName="Country" class="form-control"
+                      required>
+                      <mat-option *ngFor="let conuntry of countries" [value]="conuntry.conuntry_id">{{conuntry.client_name}}
+                      </mat-option>
+                    </mat-select>
+                    <!-- <div *ngIf="!Country.valid && (Country.dirty || Country.touched)" class="error-text">
+                      <div *ngIf="Country.errors.required">
+                        Project Type is required
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+              <div class="form-group">
+                <label class="control-label col-sm-4 add-member-label">Project Address:&nbsp;</label>
+                <div class="col-sm-8">
+                  <input type="text" maxlength="50" class="form-control" placeholder="Enter Project address" formControlName="jobTitle"
+                    required>
+                  <!-- <div *ngIf="!jobTitle.valid && (jobTitle.dirty || jobTitle.touched)" class="error-text">
+                    <div *ngIf="jobTitle.errors.required">
+                      client Name is required
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-4 add-member-label">Remarks:&nbsp;</label>
+                <div class="col-sm-8">
+                  <input type="text" maxlength="50" class="form-control" placeholder="Add Remarks"
+                    formControlName="contactName" required>
+                  <!-- <div *ngIf="!contactName.valid && (contactName.dirty || contactName.touched)" class="error-text">
+                    <div *ngIf="contactName.errors.required">
+                      Project # is required
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+              
+              
+              
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-4 add-member-label">Project Manager:&nbsp;</label>
+                    <div class="col-sm-8">
+                      <mat-select color="primary" placeholder="-- Select Project Manager --" formControlName="State" class="form-control"
+                        required>
+                        <mat-option *ngFor="let State of States" [value]="State.state_id">{{State.state_name}}</mat-option>
+                      </mat-select>
+                      <div *ngIf="!State.valid && (State.dirty || State.touched)" class="error-text">
+                        <div *ngIf="State.errors.required">
+                          Project Manager is required
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+            </form>
+          </div>
+          <mat-dialog-actions class="col-sm-12" align="end">
+              <button mat-raised-button [disabled]="!projectForm.valid"  [ngClass]="!projectForm.valid ? '' : 'btn-primary'" ><mat-icon>arrow_forward</mat-icon>&nbsp;Proceed</button>
+              <button mat-raised-button class="CancelClass" (click)="close()">&nbsp;Close</button>
+            </mat-dialog-actions>
+    </mat-step>
+    <mat-step>
+        <div mat-dialog-content>
+            <form class="form-horizontal" novalidate [formGroup]="projectForm">
+                <ng-template matStepLabel>Project Billing Details</ng-template>
+                <div class="form-group">
+                  <label class="control-label col-sm-4 add-member-label">Select Country:&nbsp;</label>
+                  <div class="col-sm-8">
+                    <mat-select color="primary" placeholder="-- Select Country --" formControlName="Country" class="form-control"
+                      required>
+                      <mat-option *ngFor="let conuntry of countries" [value]="conuntry.conuntry_id">{{conuntry.conuntry_name}}
+                      </mat-option>
+                    </mat-select>
+                    <!-- <div *ngIf="!Country.valid && (Country.dirty || Country.touched)" class="error-text">
+                      <div *ngIf="Country.errors.required">
+                        Project Type is required
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4 add-member-label">Select State:&nbsp;</label>
+                  <div class="col-sm-8">
+                    <mat-select color="primary" placeholder="-- Select State --" formControlName="Country" class="form-control"
+                      required>
+                      <mat-option *ngFor="let conuntry of countries" [value]="conuntry.conuntry_id">{{conuntry.state_name}}
+                      </mat-option>
+                    </mat-select>
+                    <!-- <div *ngIf="!Country.valid && (Country.dirty || Country.touched)" class="error-text">
+                      <div *ngIf="Country.errors.required">
+                        Project Type is required
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4 add-member-label">Select City:&nbsp;</label>
+                  <div class="col-sm-8">
+                    <mat-select color="primary" placeholder="-- Select City --" formControlName="Country" class="form-control"
+                      required>
+                      <mat-option *ngFor="let conuntry of countries" [value]="conuntry.conuntry_id">{{conuntry.city_name}}
+                      </mat-option>
+                    </mat-select>
+                    <!-- <div *ngIf="!Country.valid && (Country.dirty || Country.touched)" class="error-text">
+                      <div *ngIf="Country.errors.required">
+                        Project Type is required
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4 add-member-label">Enter Zipcode:&nbsp;</label>
+                  <div class="col-sm-8">
+                    <input type="text" maxlength="50" class="form-control" placeholder="Enter Zipcode" formControlName="jobTitle"
+                      required>
+                    <!-- <div *ngIf="!jobTitle.valid && (jobTitle.dirty || jobTitle.touched)" class="error-text">
+                      <div *ngIf="jobTitle.errors.required">
+                        client Name is required
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-4 add-member-label">Select Setup Date:&nbsp;</label>
+                    <div class="col-sm-8">
+                       
+                            <div class="input-icon right">
+                              <input class="form-control" formControlName="contactNumber"  placeholder="MM/DD/YYYY"
+                                class="form-control" id="db" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1">
+                              <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                            </div>
+                          
+                      <!-- <div *ngIf="!contactNumber.valid && (contactNumber.dirty || contactNumber.touched)" class="error-text">
+                        <div *ngIf="contactNumber.errors.required">
+                          Start date is required
+                        </div>
+                      </div> -->
+                    </div>
+                  </div>
+
+            
+                  <!-- <div class="form-group">
+                    <label class="control-label col-sm-4 add-member-label">Setup Due Date:&nbsp;</label>
+                    <div class="col-sm-8">
+                        
+                            <div class="input-icon right">
+                              <input class="form-control" formControlName="contactEmail"  placeholder="MM/DD/YYYY"
+                                class="form-control" id="db1" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2">
+                              <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+                            </div>
+                          
+                      <div *ngIf="!contactEmail.valid && (contactEmail.dirty || contactEmail.touched)" class="error-text">
+                        <div *ngIf="contactEmail.errors.required">
+                            Setup Due Date is required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <div class="form-group">
+                      <label class="control-label col-sm-4 add-member-label">Activity Date:&nbsp;</label>
+                      <div class="col-sm-8">
+                          
+                              <div class="input-icon right">
+                                <input class="form-control" formControlName="City"  placeholder="MM/DD/YYYY"
+                                  class="form-control" id="db2" [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3" name="dt3">
+                                <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
+                              </div>
+                            
+                        <div *ngIf="!City.valid && (City.dirty || City.touched)" class="error-text">
+                          <div *ngIf="City.errors.required">
+                              Setup Due Date is required
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              
+                  <div class="form-group">
+                    <label class="control-label col-sm-4 add-member-label">Awarded Amount:&nbsp;</label>
+                    <div class="col-sm-8">
+                      <input type="text" maxlength="15" class="form-control" formControlName="postal" placeholder="Enter Awarded Amount"
+                        required>
+                      <div *ngIf="!postal.valid && (postal.dirty || postal.touched)" class="error-text">
+                        <div *ngIf="postal.errors.required">
+                          postal Code is required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <div class="form-group">
+                      <label class="control-label col-sm-4 add-member-label">Invoiced Amount:&nbsp;</label>
+                      <div class="col-sm-8">
+                        <input type="text" maxlength="15" class="form-control" formControlName="invoice" placeholder="Enter Invoiced Amount"
+                          required>
+                        <div *ngIf="!invoice.valid && (invoice.dirty || invoice.touched)" class="error-text">
+                          <div *ngIf="invoice.errors.required">
+                            Invoiced is required
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+  
+              </form>
+            </div>
+            <mat-dialog-actions class="col-sm-12" align="end">
+                <button *ngIf="!project"mat-raised-button [disabled]="!projectForm.valid" 
+                  [ngClass]="!projectForm.valid ? '' : 'btn-primary'">
+                  <mat-icon>send</mat-icon>&nbsp;Save
+                </button>
+                <button *ngIf="project" mat-raised-button [disabled]="!projectForm.valid" 
+                  [ngClass]="!projectForm.valid ? '' : 'btn-primary'">
+                  <mat-icon>update</mat-icon>&nbsp;Update
+                </button>
+                <button mat-raised-button class="CancelClass" (click)="close()">
+                  &nbsp;Close
+                </button>
+              </mat-dialog-actions>
+      </mat-step>
+ </mat-horizontal-stepper>
+
+

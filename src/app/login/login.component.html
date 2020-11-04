@@ -1,0 +1,25 @@
+<div class="loginForm">
+            
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+      
+        <img class="logo" src="../../assets/images/logo.png"/>
+        
+        <div class="form-div">
+            <div class="usernamediv">
+                <i class="fa fa-user fa-lg" aria-hidden="true"></i>
+                <input type="text" id="username"  formControlName="username" placeholder="Username" class="form-input"/>
+            </div>
+        </div>
+        
+        <div class="form-div">
+            <div class="passworddiv">
+                <i class="fa fa-key fa-lg" aria-hidden="true"></i>
+                <input type="password" id="password" formControlName="password" placeholder="Password" class="form-input"/>
+            </div>
+        </div>
+        
+        <div class="form-div" >
+            <button type="submit" id="submit">Login</button>
+        </div>
+    </form>
+</div>  

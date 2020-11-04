@@ -1,0 +1,34 @@
+<div fxLayout="row wrap" class="breadcrumb" *ngIf="router.url != '/'"  [ngStyle]="{'background-color':url=='/me/dashboard'?'rgb(12, 18, 42)':'#fff'}">
+  <div fxFlex="100">
+    <h2
+      *ngIf="!description[moduleTitle][subTitle]"
+      style="margin-top:10px;margin-bottom:10px;"
+      [ngStyle]="{'color':url=='/me/dashboard'?'white':'black'}"
+    >
+      {{ moduleTitle || "Dashboard" }}
+    </h2>
+    <h2
+      *ngIf="description[moduleTitle][subTitle]"
+      style="margin-top:10px;margin-bottom:5px;"
+      [ngStyle]="{'color':url=='/me/dashboard'?'white':'black'}"
+    >
+      {{ subTitle || "Dashboard" }}
+    </h2>
+    <mat-card fxLayout="row" class="breadcrumb helptext bc" [ngStyle]="url=='/me/dashboard'?{'background-color':'rgb(33, 39, 61)','border-left': '5px #e0e0e0 solid'}:
+    {'background-color':'#e0e0e0','border-left': '5px #286ba5 solid'}">
+      <div fxFlex="100" class="flex-p">
+        <span
+          *ngIf="!description[moduleTitle][subTitle]"
+          class="page-title nomargin"  [ngStyle]="{'color':url=='/me/dashboard'?'#fff':'black'}"
+        >
+          {{ description[moduleTitle] || description["Dashboard"] }}
+        </span>
+        <span
+          *ngIf="description[moduleTitle][subTitle]"
+          class="page-title nomargin" [ngStyle]="{'color':url=='/me/dashboard'?'#fff':'black'}"
+          >{{ description[moduleTitle][subTitle] }}</span
+        >
+      </div>
+    </mat-card>
+  </div>
+</div>

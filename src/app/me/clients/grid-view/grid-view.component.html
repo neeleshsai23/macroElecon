@@ -1,0 +1,319 @@
+<div class="row-wrap">
+    <div class="flex-p w-100">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row" style="margin-bottom:7px;">
+                    <div class="col-xs-6 ">
+                        <div class="pills w-100 flex-p">
+                            <ul class="nav nav-pills">
+                                <li routerLinkActive="active">
+                                    <a mat-raised-button class="navtabWidth"
+                                    [routerLink]="['/me/clients/gridview']">
+                                    <mat-icon>grid_on</mat-icon> Grid view
+                                </a>
+                            </li>
+                            <li routerLinkActive="active">
+                                <a mat-raised-button class="navtabWidth"
+                                [routerLink]="['/me/clients/mapview']">
+                                <mat-icon>place </mat-icon> Map view
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-6 ">
+            </div>
+        </div>
+        
+        <div class="row" style="margin-top:15px;">
+            <div class="col-lg-4"> 
+                
+                <mat-card-header fxLayoutAlign="center center">                
+                    <mat-card-subtitle><h2>Top 5 States</h2></mat-card-subtitle>
+                </mat-card-header>
+                <div class="w-100 h-300p">
+                    <ngx-charts-pie-chart
+                    [scheme]="colorScheme"
+                    [results]="single"
+                    [legend]="showLegend"
+                    [explodeSlices]="explodeSlices"
+                    [labels]="showLabels"
+                    [doughnut]="doughnut"
+                    [gradient]="gradient"
+                    (select)="onSelect($event)">
+                </ngx-charts-pie-chart>                  
+            </div>
+            
+        </div>
+        <div class="col-lg-4"> 
+            
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Industry</h2></mat-card-subtitle>
+            </mat-card-header>
+            <div class="w-100 h-300p">
+                <ngx-charts-pie-chart
+                [scheme]="colorScheme"
+                [results]="multi"
+                [legend]="showLegend"
+                [explodeSlices]="explodeSlices"
+                [labels]="showLabels"
+                [doughnut]="doughnut"
+                [gradient]="gradient"
+                (select)="onSelect($event)">
+            </ngx-charts-pie-chart>                  
+        </div>
+        
+    </div>
+    <div class="col-lg-4"> 
+        
+        <mat-card-header fxLayoutAlign="center center">                
+            <mat-card-subtitle><h2>New vs Repeat</h2></mat-card-subtitle>
+        </mat-card-header>
+        <div class="w-100 h-300p">
+            <ngx-charts-pie-chart
+            [scheme]="colorScheme"
+            [results]="triple"
+            [legend]="showLegend"
+            [explodeSlices]="explodeSlices"
+            [labels]="showLabels"
+            [doughnut]="doughnut"
+            [gradient]="gradient"
+            (select)="onSelect($event)">
+        </ngx-charts-pie-chart>                  
+    </div>
+    
+</div>
+</div>
+
+
+
+
+<div class="row" style="margin-bottom:7px;">
+    <div class="col-xs-2 ">
+    </div>
+    <div class="col-xs-10 ">
+        <div class="flex-p">
+            <button mat-raised-button class="pull-right  btn-primary" (click)="openClientDialog('add')">
+                <mat-icon>add</mat-icon> Add Client
+            </button>
+            <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+            (click)="filterToggle = !filterToggle">
+            <mat-icon>filter_list</mat-icon> Filter
+        </button>
+        
+        
+        <button mat-raised-button class="pull-right tab2" style="margin-right:10px!important">
+            New Customers
+        </button>
+        <button mat-raised-button class="pull-right tab2" style="margin-right:10px!important">
+            Inactive (135)
+        </button>
+        <button mat-raised-button class="pull-right tab2" style="margin-right:10px!important">
+            Active (157)
+        </button>
+        
+    </div>
+    
+</div>
+</div>
+
+<div fxLayout="row wrap">
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100" *ngIf="filterToggle">
+        <mat-card class="filter">
+            <mat-card-content>
+                <div class="row col-sm-12">
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">Client Name:</div>
+                        <div class="col-sm-8">
+                            <input type="text" placeholder="Search By Client Name" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                            Contact Name: 
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" placeholder="Search By Contact Name" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">Email:</div>
+                        <div class="col-sm-8">
+                            <input type="text" placeholder="Search By Email" class="form-control" >
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="row col-sm-12" style="margin-top:20px">
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">Phone Number:</div>
+                        <div class="col-sm-8">
+                            <input type="text" placeholder="Search By Phone" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">Keyword:</div>
+                        <div class="col-sm-8">
+                            <input type="text" placeholder="Search By Keyword" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">City:</div>
+                        <div class="col-sm-8">
+                            <mat-select class='form-control' placeholder="Search By City">
+                                <mat-option [value]=1 >Mumbai</mat-option>
+                                <mat-option [value]=2 >Chennai</mat-option>
+                                <mat-option [value]=3 >Delhi</mat-option>
+                            </mat-select>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                
+                
+                
+                <div class="row col-sm-12 mt-5" >
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">State:</div>
+                        <div class="col-sm-8">
+                            <mat-select class='form-control' placeholder="Search By State">
+                                <mat-option [value]=1 >Mumbai</mat-option>
+                                <mat-option [value]=2 >Chennai</mat-option>
+                                <mat-option [value]=3 >Delhi</mat-option>
+                            </mat-select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">Country:</div>
+                        <div class="col-sm-8">
+                            <mat-select class='form-control' placeholder="Search By Country">
+                                <mat-option [value]=1 >Mumbai</mat-option>
+                                <mat-option [value]=2 >Chennai</mat-option>
+                                <mat-option [value]=3 >Delhi</mat-option>
+                            </mat-select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                            Postal Code: 
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" placeholder="Search By Zip" class="form-control" >
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="row col-sm-12 mt-5">
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                            Date Created: 
+                        </div>
+                        <div class="col-sm-8">
+                            <input class="form-control"   class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt7" [owlDateTime]="dt7" name="dt7">
+                            <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-2">
+                        <div class="col-lg-1" style="margin-top: -5px;">
+                            <button mat-raised-button  class="pull-right btn-primary"><mat-icon>youtube_searched_for</mat-icon> Search</button>
+                            
+                        </div>
+                        <div class="col-lg-1">
+                            <button mat-raised-button style="background-color:#37474f; color:#fff !important;margin-top: -5px" ><mat-icon>settings_backup_restore</mat-icon> Clear</button>
+                            
+                        </div>
+                        <a (click)="filterToggle = !filterToggle" class="pull-right" style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div id="divQuotesGrid" class="table-responsive">
+            <table matSort id="example2" class="table table-bordered table-hover">
+                <thead class="tbl-head">
+                    <tr>
+                        <th>Client Name</th>
+                        <th class="text-center">Projects</th>
+                        <th class="text-center">Contact Name</th>
+                        <th class="text-center">Industry</th>
+                        <th class="text-center">Email</th>
+                        <th class="text-center">Phone number</th>
+                        <th class="text-center">Street Address</th>
+                        <th class="text-center">City</th>
+                        <th class="text-center">State</th>
+                        <th class="text-center">Country</th>
+                        <th class="text-center">Postal Code</th>
+                        <!-- <th class="text-center">Contact</th>
+                            <th class="text-center">Quotes</th> -->
+                            <!-- <th class="text-center">Projects</th> -->
+                            <th class="text-center">Date Created</th>
+                            <th class="text-center">Status</th>
+                            <th class="text-center" style="width: 112px!important;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of totalProjects">
+                            <td>{{item.clientname}}</td>
+                            <td style="text-align: center!important;"><a style="color:#007ad9;cursor: pointer;" (click)="openProjectsDilog('open')">{{item.projectCount}}</a></td>
+                            <td style="text-align: center!important;">{{item.contactname}}</td>
+                            <td style="text-align: center!important;">{{item.clienttype}}</td>
+                            <td style="text-align: center!important;">{{item.email}}</td>
+                            <td style="text-align: center!important;">{{item.phone}}</td>
+                            <td style="text-align: center!important;">{{item.address}}</td>
+                            <td style="text-align: center!important;">{{item.city}}</td>
+                            <td style="text-align: center!important;">{{item.state}}</td>
+                            <td style="text-align: center!important;">{{item.country}}</td>
+                            <td style="text-align: center!important;">{{item.postal}}</td>
+                            <!-- <td style="text-align: center!important;">{{item.contact}}</td>
+                                <td style="text-align: center!important;">{{item.quotes}}</td> -->
+                                <!-- <td style="text-align: center!important;">{{item.projects}}</td> -->
+                                <td style="text-align: center!important;">{{item.created}}</td>
+                                <td >
+                                    <a 
+                                    [ngClass]="item.status ? 'status' : 'status Red'"
+                                    mwlConfirmationPopover
+                                    [popoverTitle]="popoverStatusTitle"
+                                    [popoverMessage]="popoverStatusMessage"
+                                    placement="left"
+                                    (confirm)="cancelClicked = true"
+                                    (cancel)="cancelClicked = true">
+                                    {{item.status?'Active':'Inactive'}}
+                                </a>
+                            </td>
+                            <td  class="text-center">
+                                <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Project"  (click)="openClientDialog('add')">
+                                    <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                                </a>
+                                <a ><i class="fa fa-trash red" matTooltip="Delete Project"  style="cursor: pointer;"(click)="openDeleteDialog(item)"></i></a>
+                            </td> 
+                        </tr>
+                        <tr *ngIf="totalProjects ==null || totalProjects.length ==0">
+                            <td colspan="13">No data available</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+                [pageSizeOptions]="[5, 10, 25, 50, 100]" 
+                showFirstLastButtons></mat-paginator>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
+</div>
+
+</div>
+</div>
