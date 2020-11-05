@@ -71,8 +71,8 @@
                           </mat-card-header>
                           <ngx-charts-pie-grid
                               [scheme]="colorScheme"
-                              [results]="single"
-                              (select)="onSelect($event)">
+                              [results]="single">
+                              <!-- (select)="onSelect($event)" -->
                           </ngx-charts-pie-grid>        
                       </div>
                   </mat-card>
@@ -211,7 +211,8 @@
                       [labels]="showLabels"
                       [doughnut]="doughnut"
                       [gradient]="gradient"
-                      (select)="onSelect($event)">
+                      >
+                      <!-- (select)="onSelect($event)" -->
                   </ngx-charts-pie-chart>  
           </div>
 

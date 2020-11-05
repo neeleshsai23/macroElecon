@@ -35,7 +35,8 @@
 </div>
 <mat-dialog-actions align="end">
     <button mat-raised-button class="CancelClass" (click)="close()">Close</button>
-    <button mat-raised-button class="btn-primary" (click)="saveStep()" [mat-dialog-close]="'test'"><span *ngIf="user">Save</span><span
-        *ngIf="!user">Update</span></button>
+    <button mat-raised-button class="btn-primary" (click)="saveStep()" [mat-dialog-close]="'test'"><span >Save</span>
+        <!-- <span
+        *ngIf="!user">Update</span></button> -->
         
     </mat-dialog-actions> 
