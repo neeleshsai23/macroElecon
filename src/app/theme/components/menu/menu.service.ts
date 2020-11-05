@@ -35,7 +35,7 @@ export class MenuService {
           // new Menu (3, 'Clients', '/clients', null, 'groups', null, false, 0,"white",true), 
           new Menu (4, 'Projects', '/simc/projects', null, 'business_center', null, false, 0,"white",true), 
           new Menu (5, 'Devices', '/simc/devices', null, 'dns', null, false, 0,"white",true), 
-          new Menu (6, 'User', '/simc/user', null, 'admin_panel_settings', null, true, 0,"white",true),   
+          new Menu (6, 'My Account', '/simc/user', null, 'admin_panel_settings', null, true, 0,"white",true),   
           // new Menu (7, 'Master Data', '/me/admin/masterdata', null, 'reorder', null, false, 6,"white",true),  
           new Menu (8, 'Users', '/simc/user/users', null, 'people', null, false, 6,"white",true), 
           new Menu (9, 'Settings', '/simc/user/settings', null, 'settings', null, false, 6,"white",true), 
