@@ -52,7 +52,7 @@ export class BreadcrumbComponent {
 
             "Analytics": "View analytics in the form of graphs and charts to get an overview of any project",
 
-            "Dashboard": "This is Dashboard Screen",
+            "Dashboard": "View analytics in the form of graphs and charts to get an overview of any project",
 
             "Manage": "This is Manage Screen",
             

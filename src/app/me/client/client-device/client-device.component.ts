@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import {OpenParametersDialogComponent} from './open-parameters-dialog/open-parameters-dialog.component';
 
 @Component({
   selector: 'app-client-device',
@@ -17,10 +19,26 @@ export class ClientDeviceComponent implements OnInit {
   // {id:"#0037",type:"Power Meter",make:"Siemens",model:"D-1234",client:"ABC Infra",project:"Test Project",module:"Test Module",date_installed:"09 - Jan - 2020",parameters:"5",data_field:"View",status:"Active"},
   ]
 
-  constructor() { }
+  constructor(public dialog : MatDialog) { }
 
   ngOnInit() {
 
+  }
+
+  public openCampaignDialog(Campaign) {
+    const dialogRef = this.dialog.open(OpenParametersDialogComponent, {
+      data: Campaign,
+      height: 'auto',
+      width: '900px',
+      autoFocus: false
+    });
+
+    dialogRef.afterClosed().subscribe(campaign => {
+      if (campaign === 'save') {
+        
+      } else {
+      }
+    });
   }
 
   
