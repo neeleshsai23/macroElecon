@@ -28,7 +28,7 @@ export class MenuService {
         new Menu (9, 'Settings', '/me/admin/settings', null, 'settings', null, false, 6,"white",true), 
         new Menu (10, 'Lookup Options', '/me/admin/lookup', null, 'search', null, false, 6,"white",true),
         );
-      } else if (this.userType == 'customer') {
+      } else if (this.userType == 'tenant') {
         temp.push(
           new Menu (1, 'Dashboard', '/simc/dashboard', null, 'dashboard', null, false, 0,"white",true),
           // new Menu (2, 'Analytics', '/me/analytics', null, 'analytics', null, false, 0,"white"), 
