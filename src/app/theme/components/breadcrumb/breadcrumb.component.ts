@@ -121,7 +121,9 @@ export class BreadcrumbComponent {
             "Devices": "Add and Manage IoT devices and read real time data pushed by the sensors in the IoT device",
             "Data Field":"This is DataField Screen",
 
-            "Clients":"Add , view and manage your client directory on this screen"
+            "Clients":"Add , view and manage your client directory on this screen",
+
+            "Login":"This is login screen"
         };
         this.router.events.subscribe(event => {
             if (event instanceof NavigationEnd) {

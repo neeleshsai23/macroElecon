@@ -8,7 +8,7 @@ import { DashboardComponent } from "./me/dashboard/dashboard.component";
 export const routes: Routes = [
   
   { path: "", redirectTo: "login", pathMatch: "full" },
-  { path: "login", component: LoginComponent},
+  { path: "login", component: LoginComponent,data:{breadcrumb:"Login"}},
   {
     path: "me",
     component: LayoutComponent,
