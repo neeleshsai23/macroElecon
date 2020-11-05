@@ -23,7 +23,7 @@ export const routes = [
 ];
 
 @NgModule({
-  declarations: [ ChecklistComponent, DevicesComponent,  ScheduleorderDialogComponent, AddDeviceComponent, DataFieldComponent, DatafieldCardviewComponent, DatafieldGridviewComponent],
+  declarations: [ ChecklistComponent, DevicesComponent,  ScheduleorderDialogComponent, AddchecklistDialogComponent,AddDeviceComponent, DataFieldComponent, DatafieldCardviewComponent, DatafieldGridviewComponent],
   imports: [
     CommonModule,RouterModule.forChild(routes),
     SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,

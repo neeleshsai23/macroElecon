@@ -26,10 +26,9 @@ export const routes = [
     RouterModule.forChild(routes), DataTableModule,FormsModule,ReactiveFormsModule,TableModule,
     SharedModule
   ], providers: [DragulaService],
-  declarations: [LookupComponent, SettingsComponent, ],
+  declarations: [LookupComponent, SettingsComponent,AddLookupDialogComponent ],
   entryComponents:[
     AddLookupDialogComponent,
-    // AddCheckListDialogComponent,
     // AddColorcodeDialogComponent
     
   ]
