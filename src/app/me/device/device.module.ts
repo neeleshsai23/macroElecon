@@ -13,6 +13,7 @@ import { AddchecklistDialogComponent } from './checklist/addchecklist-dialog/add
 import { DataFieldComponent } from './devices/data-field/data-field.component';
 import { DatafieldCardviewComponent } from './devices/data-field/datafield-cardview/datafield-cardview.component';
 import { DatafieldGridviewComponent } from './devices/data-field/datafield-gridview/datafield-gridview.component';
+import {ChecklistComponent} from './checklist/checklist.component';
 
 export const routes = [
   { path: '', component:DevicesComponent, pathMatch: 'full' },
@@ -22,12 +23,12 @@ export const routes = [
 ];
 
 @NgModule({
-  declarations: [  DevicesComponent,  ScheduleorderDialogComponent, AddDeviceComponent, DataFieldComponent, DatafieldCardviewComponent, DatafieldGridviewComponent],
+  declarations: [ ChecklistComponent, DevicesComponent,  ScheduleorderDialogComponent, AddDeviceComponent, DataFieldComponent, DatafieldCardviewComponent, DatafieldGridviewComponent],
   imports: [
     CommonModule,RouterModule.forChild(routes),
     SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,
     OwlDateTimeModule,OwlNativeDateTimeModule
   ],
-  entryComponents:[ScheduleorderDialogComponent,DeleteConfirmDialogComponent,AddDeviceComponent]
+  entryComponents:[ScheduleorderDialogComponent,DeleteConfirmDialogComponent,AddDeviceComponent,AddchecklistDialogComponent]
 })
 export class DeviceModule { }

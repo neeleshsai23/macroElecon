@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {TableModule} from 'primeng/table';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { UsersComponent } from './users/users.component';
+import { AddLookupDialogComponent } from './lookup/add-lookup-dialog/add-lookup-dialog.component';
 export const routes = [
   { path: '', redirectTo: 'masterdata', pathMatch: 'full' },
   { path: 'users', loadChildren: './users/users.module#UsersModule', data: { breadcrumb: 'Users' }},
@@ -27,7 +28,7 @@ export const routes = [
   ], providers: [DragulaService],
   declarations: [LookupComponent, SettingsComponent, ],
   entryComponents:[
-    // AddLookupDialogComponent,
+    AddLookupDialogComponent,
     // AddCheckListDialogComponent,
     // AddColorcodeDialogComponent
     
