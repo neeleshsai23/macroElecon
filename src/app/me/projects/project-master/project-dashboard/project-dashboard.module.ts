@@ -11,9 +11,9 @@ import { DndModule } from 'ngx-drag-drop';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { DragDropModule } from 'primeng/primeng';
 import { OverviewComponent } from './overview/overview.component';
-import { SitevisitsComponent } from './sitevisits/sitevisits.component';
-import { SitevisitdialogComponent } from './sitevisits/sitevisitdialog/sitevisitdialog.component';
-import { SitevisitadddocComponent } from './sitevisits/sitevisitadddoc/sitevisitadddoc.component';
+import { ModulesandDevicesComponent } from './modulesanddevices/modulesanddevices.component';
+import { SitevisitdialogComponent } from './modulesanddevices/sitevisitdialog/sitevisitdialog.component';
+import { SitevisitadddocComponent } from './modulesanddevices/sitevisitadddoc/sitevisitadddoc.component';
 import { DeleteConfirmDialogComponent } from 'src/app/shared/delete-confirm-dialog/delete-confirm-dialog.component';
 import { ServicesComponent } from './services/services.component';
 import { ConceptComponent } from './concept/concept.component';
@@ -32,9 +32,9 @@ import { BudgetComponent } from './budget/budget.component';
 import { AddsiteDialogComponent } from './budget/addsite-dialog/addsite-dialog.component';
 import { MetricsComponent } from './metrics/metrics.component';
 import { AddNotesInDesignComponent } from './design/add-notes-in-design/add-notes-in-design.component';
-import { AddFactoryComponent } from './sitevisits/add-factory/add-factory.component';
-import { AddFactoryModuleComponent } from './sitevisits/add-factory-module/add-factory-module.component';
-import { AddFactoryModuleTaskComponent } from './sitevisits/add-factory-module-task/add-factory-module-task.component';
+import { AddFactoryComponent } from './modulesanddevices/add-factory/add-factory.component';
+import { AddFactoryModuleComponent } from './modulesanddevices/add-factory-module/add-factory-module.component';
+import { AddFactoryModuleTaskComponent } from './modulesanddevices/add-factory-module-task/add-factory-module-task.component';
 import { AddActionItemComponent } from './drawings/add-action-item/add-action-item.component';
 import { AddActionIteComponent } from './drawings/add-action-ite/add-action-ite.component';
 import { AppendLinedialogComponent } from './schedule/append-linedialog/append-linedialog.component';
@@ -50,13 +50,13 @@ import { ExceptionsComponent } from './exceptions/exceptions.component';
 
 export const routes = [ 
   { path: '', redirectTo:"metrics", pathMatch:'full' },
-  { path: 'modules&devices', component: SitevisitsComponent, data: { breadcrumb: 'Project Dashboard' } },
+  { path: 'modules&devices', component: ModulesandDevicesComponent, data: { breadcrumb: 'Project Dashboard' } },
   { path: 'metrics', component: MetricsComponent, data: { breadcrumb: 'Project Dashboard' } },
-  {path:'exceptions',component:ExceptionsComponent,data:{breadcrumb:'Project Dashboard'}}
+  {path:'exceptions',component:ExceptionsComponent,loadChildren:'./exceptions/exceptions.module#ExceptionsModule',data:{breadcrumb:'Project Dashboard'}}
 ]
 
 @NgModule({
-  declarations: [ActivityComponent, OverviewComponent, SitevisitsComponent, SitevisitdialogComponent, SitevisitadddocComponent, ServicesComponent, ConceptComponent,ConceptdialogComponent, ScheduleComponent, TenderComponent, DesignComponent, DesigndialogComponent, DrawingsComponent, DrawingdialogComponent, ClosureComponent,QualityDialogComponent,TestrecordDialogComponent, ConstructionComponent, BudgetComponent, AddsiteDialogComponent, MetricsComponent, AddNotesInDesignComponent, AddFactoryComponent, AddFactoryModuleComponent, AddFactoryModuleTaskComponent, AddActionItemComponent, AddActionIteComponent, AppendLinedialogComponent, AddDocInServiceComponent, AddVersionDoicComponent, DriveurldialogComponent, GhantComponent, AddPreviousComponent, ExceptionsComponent],
+  declarations: [ActivityComponent, OverviewComponent, ModulesandDevicesComponent, SitevisitdialogComponent, SitevisitadddocComponent, ServicesComponent, ConceptComponent,ConceptdialogComponent, ScheduleComponent, TenderComponent, DesignComponent, DesigndialogComponent, DrawingsComponent, DrawingdialogComponent, ClosureComponent,QualityDialogComponent,TestrecordDialogComponent, ConstructionComponent, BudgetComponent, AddsiteDialogComponent, MetricsComponent, AddNotesInDesignComponent, AddFactoryComponent, AddFactoryModuleComponent, AddFactoryModuleTaskComponent, AddActionItemComponent, AddActionIteComponent, AppendLinedialogComponent, AddDocInServiceComponent, AddVersionDoicComponent, DriveurldialogComponent, GhantComponent, AddPreviousComponent, ExceptionsComponent],
   imports: [
     CommonModule,NgxChartsModule,RouterModule.forChild(routes),GanttModule,
     SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,

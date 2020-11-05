@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import { PageEvent } from '@angular/material';
 import { AppSettings } from 'src/app/app.settings';
 import { Settings } from 'src/app/app.settings.model';
@@ -6,7 +6,8 @@ import { Settings } from 'src/app/app.settings.model';
 @Component({
   selector: 'app-client-exceptions',
   templateUrl: './client-exceptions.component.html',
-  styleUrls: ['./client-exceptions.component.scss']
+  styleUrls: ['./client-exceptions.component.scss'],
+  encapsulation:ViewEncapsulation.None
 })
 export class ClientExceptionsComponent implements OnInit {
 

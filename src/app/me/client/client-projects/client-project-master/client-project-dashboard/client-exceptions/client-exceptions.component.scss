@@ -47,3 +47,9 @@
   background-color: rgb(203, 218, 249);
   color: black;
 }
+
+.app.black-light .ngx-charts text {
+  fill: rgba(140, 140, 140, 1) !important;
+  font-weight: bold;
+  font-size: 16px;
+}

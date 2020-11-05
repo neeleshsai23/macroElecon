@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { PageEvent } from '@angular/material';
 import { AppSettings } from '../../../../../app.settings';
 import { Settings } from '../../../../../app.settings.model';
@@ -6,7 +6,8 @@ import { Settings } from '../../../../../app.settings.model';
 @Component({
   selector: 'app-exceptions',
   templateUrl: './exceptions.component.html',
-  styleUrls: ['./exceptions.component.scss']
+  styleUrls: ['./exceptions.component.scss'],
+  encapsulation:ViewEncapsulation.None
 })
 export class ExceptionsComponent implements OnInit {
 

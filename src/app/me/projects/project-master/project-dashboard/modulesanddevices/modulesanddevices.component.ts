@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import { TreeNode } from 'primeng/components/common/api';
 import { MatDialog } from '@angular/material';
 import { TreeService } from '../tree.service';
@@ -7,11 +7,12 @@ import { AddFactoryModuleComponent } from './add-factory-module/add-factory-modu
 import { AddFactoryModuleTaskComponent } from './add-factory-module-task/add-factory-module-task.component';
 
 @Component({
-  selector: 'app-sitevisits',
-  templateUrl: './sitevisits.component.html',
-  styleUrls: ['./sitevisits.component.scss']
+  selector: 'app-modulesanddevices',
+  templateUrl: './modulesanddevices.component.html',
+  styleUrls: ['./modulesanddevices.component.scss'],
+  encapsulation:ViewEncapsulation.None
 })
-export class SitevisitsComponent implements OnInit {
+export class ModulesandDevicesComponent implements OnInit {
 
   localData:any;
 

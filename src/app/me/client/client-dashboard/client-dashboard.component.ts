@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import { PageEvent } from '@angular/material';
 import { Router } from '@angular/router';
 import { AppSettings } from 'src/app/app.settings';
@@ -7,7 +7,8 @@ import { Settings } from 'src/app/app.settings.model';
 @Component({
   selector: 'app-client-dashboard',
   templateUrl: './client-dashboard.component.html',
-  styleUrls: ['./client-dashboard.component.scss']
+  styleUrls: ['./client-dashboard.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ClientDashboardComponent implements OnInit {
 
@@ -15,7 +16,13 @@ export class ClientDashboardComponent implements OnInit {
   widget1SelectedYear = '2016';
   widget5SelectedDay = 'today';
 
-
+  projects:object[]=[
+      {project_id:1,project_code:'P12007'},
+      {project_id:2,project_code:'P12009'},
+      {project_id:3,project_code:'P12011'},
+      {project_id:4,project_code:'P12012'},
+      {project_id:5,project_code:'P12015'}
+  ]
   
 
   // ngAfterViewInit(){

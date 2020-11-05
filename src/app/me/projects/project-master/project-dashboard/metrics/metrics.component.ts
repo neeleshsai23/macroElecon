@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,ViewEncapsulation} from '@angular/core';
 import { AppSettings } from '../../../../../app.settings';
 import { Settings } from '../../../../../app.settings.model';
 import { PageEvent } from '@angular/material';
@@ -6,7 +6,8 @@ import { PageEvent } from '@angular/material';
 @Component({
   selector: 'app-metrics',
   templateUrl: './metrics.component.html',
-  styleUrls: ['./metrics.component.scss']
+  styleUrls: ['./metrics.component.scss'],
+  encapsulation:ViewEncapsulation.None
 })
 export class MetricsComponent {
   
@@ -25,7 +26,7 @@ export class MetricsComponent {
   public showXAxisLabel = true;
   public xAxisLabel = 'Days';
   public showYAxisLabel = true;
-  public yAxisLabel = 'Exceptions';
+  public yAxisLabel = 'Exceptions(%)';
   public gradient = false;
   public gradient2 = false;
   public colorScheme = {
@@ -153,128 +154,127 @@ export class MetricsComponent {
         series: [
           {
             name: '1',
-            value: 6
+            value: 60
           },
           {
             name: '2',
-            value: 2
+            value: 20
           },
           {
             name: '3',
-            value: 1
-          },
-          {
-            name: '4',
-            value: 4
-          },
-          {
-            name: '5',
-            value: 3
-          },
-          {
-            name: '6',
-            value: 9
-          },
-          {
-            name: '7',
-            value: 2
-          },
-          {
-            name: '8',
             value: 10
           },
           {
+            name: '4',
+            value: 40
+          },
+          {
+            name: '5',
+            value: 30
+          },
+          {
+            name: '6',
+            value: 90
+          },
+          {
+            name: '7',
+            value: 20
+          },
+          {
+            name: '8',
+            value: 100
+          },
+          {
             name: '9',
-            value: 1
+            value: 10
           },
           {
             name: '10',
-            value: 9
+            value: 90
           },
           {
             name: '11',
-            value: 7
+            value: 70
           },
           {
             name: '12',
-            value: 3
+            value: 30
           },
           {
             name: '13',
-            value: 4
+            value: 40
           },
           {
             name: '14',
-            value: 2
+            value: 20
           },
           {
             name: '15',
-            value: 3
+            value: 30
           },
           {
             name: '16',
-            value: 1
+            value: 10
           },
           {
             name: '17',
-            value: 1
+            value: 10
           },
           {
             name: '18',
-            value: 4
+            value: 40
           },
           {
             name: '19',
-            value: 3
+            value: 30
           },
           {
             name: '20',
-            value: 2
+            value: 20
           },
           {
             name: '21',
-            value: 2
+            value: 20
           },
           {
             name: '22',
-            value: 1
+            value: 10
           },
           {
             name: '23',
-            value: 3
+            value: 30
           },
           {
             name: '24',
-            value: 4
+            value: 40
           },
           {
             name: '25',
-            value: 4
+            value: 40
           },
           {
             name: '26',
-            value: 3
+            value: 30
           },
           {
             name: '27',
-            value: 1
+            value: 10
           },
           {
             name: '28',
-            value: 4
+            value: 40
           },
           {
             name: '29',
-            value: 1
+            value: 10
           },
           {
             name: '30',
-            value: 3
+            value: 30
           },
           {
             name:'31',
-            value:4
-          }
+            value: 40          }
         ]
       },
       

@@ -11,19 +11,19 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { DragDropModule } from 'primeng/primeng';
 import { GanttModule, ResizeService, SortService, FilterService, SelectionService, ReorderService,
   EditService, DayMarkersService, ToolbarService } from '@syncfusion/ej2-angular-gantt';
-import {ClientMetricsComponent} from './client-metrics/client-metrics.component';
-import {ClientModulesanddevicesComponent} from './client-modulesanddevices/client-modulesanddevices.component';
-import {ClientExceptionsComponent} from './client-exceptions/client-exceptions.component';
+import { ClientExceptionsCardviewComponent } from './client-exceptions-cardview/client-exceptions-cardview.component';
+import { ClientExceptionsGridviewComponent } from './client-exceptions-gridview/client-exceptions-gridview.component';
 
 export const routes = [ 
-  { path: '', redirectTo:'metrics'},
-  { path: 'modules&devices', component: ClientModulesanddevicesComponent, data: { breadcrumb: 'Project Dashboard' } },
-  { path: 'metrics', component: ClientMetricsComponent, data: { breadcrumb: 'Project Dashboard' } },
-  {path:'exceptions',component:ClientExceptionsComponent,loadChildren:'./client-exceptions/client-exceptions.module#ClientExceptionsModule',data:{breadcrumb:'Project Dashboard'}}
+    { path: '', redirectTo:'cardview'},
+        {path:'cardview',component:ClientExceptionsCardviewComponent,data:{breadcrumb:"Project Dashboard"}},
+        {path:'gridview',component:ClientExceptionsGridviewComponent,data:{breadcrumb:"Project Dashboard"}}
+   
+    
 ]
 
 @NgModule({
-  declarations: [ClientMetricsComponent,ClientModulesanddevicesComponent,ClientExceptionsComponent],
+  declarations: [ ClientExceptionsCardviewComponent, ClientExceptionsGridviewComponent],
   imports: [
     CommonModule,NgxChartsModule,RouterModule.forChild(routes),GanttModule,
     SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,
@@ -32,4 +32,4 @@ export const routes = [
   providers: [ ResizeService, SortService, FilterService, SelectionService, ReorderService,
     EditService, DayMarkersService, ToolbarService],
 })
-export class ClientProjectDashboardModule { }
+export class ClientExceptionsModule { }

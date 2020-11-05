@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DeleteConfirmDialogComponent } from 'src/app/shared/delete-confirm-dialog/delete-confirm-dialog.component';
 import { MatDialog, PageEvent } from '@angular/material';
 import { FormControl } from '@angular/forms';
@@ -11,7 +11,8 @@ import { LogisticsdialogComponent } from '../logisticsdialog/logisticsdialog.com
 @Component({
   selector: 'app-project-gridview',
   templateUrl: './project-gridview.component.html',
-  styleUrls: ['./project-gridview.component.scss']
+  styleUrls: ['./project-gridview.component.scss'],
+  encapsulation:ViewEncapsulation.None
 })
 export class ProjectGridviewComponent implements OnInit {
   

@@ -50,7 +50,7 @@ export class BreadcrumbComponent {
           });
         this.description = {
 
-            "Analytics": "This is Analytics Screen",
+            "Analytics": "View analytics in the form of graphs and charts to get an overview of any project",
 
             "Dashboard": "This is Dashboard Screen",
 

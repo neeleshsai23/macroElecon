@@ -18,6 +18,22 @@ export class DashboardComponent implements OnInit{
   widget1SelectedYear = '2016';
   widget5SelectedDay = 'today';
 
+  projects:object[]=[
+    {project_id:1,project_code:'P12007'},
+    {project_id:2,project_code:'P12009'},
+    {project_id:3,project_code:'P12011'},
+    {project_id:4,project_code:'P12012'},
+    {project_id:5,project_code:'P12015'}
+]
+
+clients:object[]=[
+    {client_id:1,client_name:'Amazon'},
+    {client_id:2,client_name:'Flipkart'},
+    {client_id:3,client_name:'E-Square'},
+    {client_id:4,client_name:'Stonefield'},
+    {client_id:5,client_name:'Bluedart'}
+]
+
 
   
 

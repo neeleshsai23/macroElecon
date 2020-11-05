@@ -5,6 +5,7 @@ import {
   HostListener,
   ViewChildren,
   QueryList,
+  ViewEncapsulation
 } from "@angular/core";
 import { Router, NavigationEnd } from "@angular/router";
 import {
@@ -19,7 +20,7 @@ import { MenuService } from "../theme/components/menu/menu.service";
   selector: "app-pages",
   templateUrl: "./layout.component.html",
   styleUrls: ["./layout.component.scss"],
-  providers: [MenuService],
+  providers: [MenuService]
 })
 export class LayoutComponent implements OnInit {
   @ViewChild("sidenav") sidenav: any;

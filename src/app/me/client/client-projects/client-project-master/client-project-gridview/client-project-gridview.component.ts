@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import { PageEvent } from '@angular/material';
 import { Settings } from 'src/app/app.settings.model';
 import { FormControl } from '@angular/forms';
@@ -8,7 +8,8 @@ import { AppSettings } from 'src/app/app.settings';
 @Component({
   selector: 'app-client-project-gridview',
   templateUrl: './client-project-gridview.component.html',
-  styleUrls: ['./client-project-gridview.component.scss']
+  styleUrls: ['./client-project-gridview.component.scss'],
+  encapsulation:ViewEncapsulation.None
 })
 export class ClientProjectGridviewComponent implements OnInit {
 
